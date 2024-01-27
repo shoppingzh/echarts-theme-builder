@@ -3,7 +3,7 @@
     <div
       v-for="(item, index) in items"
       :key="index"
-      class="w-1/2 h-[400px]">
+      class="w-full md:w-1/2 p-2 h-[400px]">
       <component :is="item" class="h-full" />
     </div>
   </div>

@@ -5,7 +5,7 @@
       <div class="flex-1 w-0"></div>
       <AButton type="primary" @click="popper.design = true">编辑</AButton>
     </div>
-    <div class="flex-1 h-0 p-2 overflow-auto">
+    <div class="flex-1 h-0 p-4 overflow-auto">
       <Charts />
     </div>
   </div>

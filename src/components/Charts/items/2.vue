@@ -17,26 +17,14 @@ const data = ['北京', '上海', '广东', '福建', '辽宁'].map(o => ({
 const option = computed(() => {
   return {
     title: {
-      text: '经典混合图',
-      subtext: '柱状图 + 折线图',
-    },
-    xAxis: {
-      type: 'category',
-      data: data.map(o => o.name),
-    },
-    yAxis: {
-      type: 'value',
+      text: '饼图',
     },
     tooltip: {},
     legend: {},
     series: [{
-      type: 'bar',
+      type: 'pie',
       name: '系列一',
-      data: data.map(o => o.value1),
-    }, {
-      type: 'line',
-      name: '系列二',
-      data: data.map(o => o.value2),
+      data: data.map(o => ({ name: o.name, value: o.value1, })),
     }]
   } as EChartsOption
 })
