@@ -7,7 +7,7 @@ export default defineStore('global', () => {
   const theme = reactive({
     series: {
       bar: {
-        barWidth: 20,
+        // barWidth: 20,
       },
       line: {
         // smooth: true,
