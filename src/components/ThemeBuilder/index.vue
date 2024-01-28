@@ -1,7 +1,7 @@
 <template>
   <div class="h-full flex flex-col">
     <ASegmented
-      v-model:value="(activeValue as any)"
+      v-model:value="activeValue"
       block
       :options="items.map(o => ({ value: o.value as any, label: o.label, disabled: o.disabled, }))" />
 
