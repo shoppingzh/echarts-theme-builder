@@ -29,7 +29,7 @@ const option = computed(() => {
     series: [{
       type: 'candlestick',
       name: '系列一',
-      data: days.map(o => {
+      data: days.map(() => {
         const start = random(0, 1000)
         const arr = [start, start + random(-100, 100)]
         return [arr[0], arr[1], arr[0] + random(-100, 0), arr[0] + random(0, 100)]
