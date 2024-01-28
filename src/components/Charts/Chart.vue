@@ -18,13 +18,15 @@ const { theme } = useGlogal()
 const themeOption = computed(() => {
   const option = withTheme(cloneDeep(props.option), theme as Theme)
 
-  console.log(option);
+  // console.log(option);
   
   return option
 })
 
 const { el } = useChart({
   option: themeOption,
+  lazyRender: true,
+  resizeDuration: 200,
 })
 
 </script>
