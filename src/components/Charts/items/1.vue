@@ -16,10 +16,13 @@ const data = ['北京', '上海', '广东', '福建', '辽宁'].map(o => ({
 
 const option = computed(() => {
   return {
-    title: {
+    title: [{
       text: '经典混合图',
-      subtext: '柱状图 + 折线图',
-    },
+      subtext: '混合图指的是柱状图 + 折线图',
+    }, {
+      text: '第二个主标题',
+      right: 0,
+    }],
     xAxis: {
       type: 'category',
       data: data.map(o => o.name),
