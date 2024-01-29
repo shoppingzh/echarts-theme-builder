@@ -10,6 +10,9 @@ import { random } from 'lodash'
 
 const option = computed(() => {
   return {
+    grid: {
+      show: true,
+    },
     title: {
       text: '散点图',
     },

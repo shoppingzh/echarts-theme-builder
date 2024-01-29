@@ -1,5 +1,5 @@
 <template>
-  <ARadioGroup v-model:value="model">
+  <ARadioGroup v-model:value="model" button-style="solid">
     <ARadioButton value="auto">自动</ARadioButton>
     <ARadioButton value="left">左对齐</ARadioButton>
     <ARadioButton value="center">居中对齐</ARadioButton>

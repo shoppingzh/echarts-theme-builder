@@ -12,6 +12,9 @@ const indicators = new Array(6).fill(0).map((_, idx) => `能力${idx}`)
 
 const option = computed(() => {
   return {
+    grid: {
+      show: true,
+    },
     title: {
       text: '雷达图',
     },

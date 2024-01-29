@@ -16,6 +16,9 @@ const data = ['北京', '上海', '广东', '福建', '辽宁'].map(o => ({
 
 const option = computed(() => {
   return {
+    grid: {
+      show: true,
+    },
     title: {
       text: '饼图',
     },

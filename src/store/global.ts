@@ -25,6 +25,7 @@ export default defineStore('global', () => {
 
   const theme = reactive({
     textStyle: {},
+    grid: {},
     title: {
       textStyle: {},
       subtextStyle: {},

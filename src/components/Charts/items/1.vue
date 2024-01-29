@@ -16,6 +16,9 @@ const data = ['北京', '上海', '广东', '福建', '辽宁'].map(o => ({
 
 const option = computed(() => {
   return {
+    grid: {
+      show: true,
+    },
     title: [{
       text: '经典混合图',
       subtext: '混合图指的是柱状图 + 折线图',

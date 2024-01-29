@@ -14,6 +14,7 @@
 <script setup lang="ts">
 import useSelect from 'magic-hooks/lib/useSelect'
 import Global from './Global/index.vue'
+import Grid from './Grid/index.vue'
 import Title from './Title/index.vue'
 import Axis from './Axis/index.vue'
 
@@ -25,7 +26,7 @@ const { activeValue, activeItem, items, } = useSelect({
   }, {
     value: 'grid',
     label: '网格',
-    component: null,
+    component: Grid,
   }, {
     value: 'title',
     label: '标题',
