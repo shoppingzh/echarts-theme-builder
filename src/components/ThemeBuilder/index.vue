@@ -5,9 +5,9 @@
       block
       :options="items.map(o => ({ value: o.value as any, label: o.label, disabled: o.disabled, }))" />
 
-    <div class="mt-4 flex-1 h-0 overflow-auto">
+    <AForm class="mt-4 flex-1 h-0 overflow-auto">
       <component v-if="activeItem" :is="activeItem.component" />
-    </div>
+    </AForm>
   </div>
 </template>
 
@@ -15,6 +15,7 @@
 import useSelect from 'magic-hooks/lib/useSelect'
 import Global from './Global/index.vue'
 import Title from './Title/index.vue'
+import Axis from './Axis/index.vue'
 
 const { activeValue, activeItem, items, } = useSelect({
   items: [{
@@ -22,9 +23,25 @@ const { activeValue, activeItem, items, } = useSelect({
     label: '全局',
     component: Global,
   }, {
+    value: 'grid',
+    label: '网格',
+    component: null,
+  }, {
     value: 'title',
     label: '标题',
     component: Title,
+  }, {
+    value: 'axis',
+    label: '坐标轴',
+    component: Axis,
+  }, {
+    value: 'legend',
+    label: '图例',
+    component: null,
+  }, {
+    value: 'tooltip',
+    label: 'Tooltip',
+    component: null,
   }, {
     value: 'series',
     label: '系列',

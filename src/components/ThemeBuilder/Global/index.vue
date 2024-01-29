@@ -1,19 +1,20 @@
 <template>
-  <AForm>
-    <ACollapse v-model:activeKey="activeKeys">
-      <ACollapsePanel header="背景" key="1">
-        <AFormItem label="背景色">
-          <ColorPicker v-model="(theme.backgroundColor as string)" />
-        </AFormItem>
-      </ACollapsePanel>
-      <ACollapsePanel header="全局文本" key="2">
-        <TextStyle
-          v-model:color="theme.textStyle.color"
-          v-model:fontSize="theme.textStyle.fontSize"
-          v-model:fontWeight="theme.textStyle.fontWeight" />
-      </ACollapsePanel>
-    </ACollapse>
-  </AForm>
+  <ACollapse v-model:activeKey="activeKeys">
+    <ACollapsePanel header="背景" key="1">
+      <AFormItem label="背景色">
+        <ColorPicker v-model="(theme.backgroundColor as string)" />
+      </AFormItem>
+    </ACollapsePanel>
+    <ACollapsePanel header="全局文本" key="2">
+      <TextStyle
+        v-model:color="theme.textStyle.color"
+        v-model:fontSize="theme.textStyle.fontSize"
+        v-model:fontWeight="theme.textStyle.fontWeight"
+        v-model:borderColor="theme.textStyle.textBorderColor"
+        v-model:borderWidth="theme.textStyle.textBorderWidth"
+        v-model:borderType="theme.textStyle.textBorderType" />
+    </ACollapsePanel>
+  </ACollapse>
 </template>
 
 <script setup lang="ts">
