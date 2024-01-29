@@ -17,7 +17,6 @@ const data = ['北京', '上海', '广东', '福建', '辽宁'].map(o => ({
 const option = computed(() => {
   return {
     grid: {
-      show: true,
     },
     title: [{
       text: '经典混合图',
@@ -42,6 +41,18 @@ const option = computed(() => {
     }, {
       type: 'line',
       name: '系列二',
+      data: data.map(o => o.value2),
+    }, {
+      type: 'bar',
+      name: '系列三',
+      data: data.map(o => o.value2),
+    }, {
+      type: 'line',
+      name: '系列四',
+      data: data.map(o => o.value2),
+    }, {
+      type: 'line',
+      name: '系列五',
       data: data.map(o => o.value2),
     }]
   } as EChartsOption

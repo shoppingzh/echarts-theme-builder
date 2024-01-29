@@ -1,6 +1,9 @@
 <template>
   <ACollapse v-model:active-key="activeKeys">
     <ACollapsePanel header="基础" key="1">
+      <AFormItem label="显示">
+        <ASwitch v-model:checked="theme.grid.show" />
+      </AFormItem>
       <AFormItem label="边距">
         <Space v-model="space" />
       </AFormItem>

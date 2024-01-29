@@ -16,7 +16,6 @@ const yearEnd = year.endOf('year')
 const option = computed(() => {
   return {
     grid: {
-      show: true,
     },
     title: {
       text: '日历图',

@@ -15,7 +15,6 @@ const days = getBetweenDates(dayjs('2024-01-01').toDate(), dayjs('2024-01-31').t
 const option = computed(() => {
   return {
     grid: {
-      show: true,
     },
     title: {
       text: 'K线图',

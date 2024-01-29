@@ -6,24 +6,7 @@ import { downloadBlob } from '@shoppingzh/tools/lib/dom'
 
 export default defineStore('global', () => {
 
-  // const theme = useLocalStorage('theme', {
-  //   textStyle: {},
-  //   title: {
-  //     textStyle: {},
-  //   },
-  //   series: {
-  //     bar: {
-  //       // barWidth: 20,
-  //     },
-  //     line: {
-  //       // smooth: true,
-  //     },
-  //   },
-  // } as Theme, {
-  //   deep: true,
-  // })
-
-  const theme = reactive({
+  const defaultTheme = {
     textStyle: {},
     grid: {},
     title: {
@@ -34,22 +17,27 @@ export default defineStore('global', () => {
     tooltip: {},
     series: {
       bar: {
-        // barWidth: 20,
+        itemStyle: {},
       },
       line: {
         // smooth: true,
       },
     },
-  } as Theme)
-  // console.log(theme);
-  
+  } as Theme
+
+  // const theme = useLocalStorage('theme', defaultTheme, {
+  //   deep: true,
+  // })
+
+  const theme = reactive(defaultTheme)
+
   function download() {
     const blob = new Blob([JSON.stringify(theme, null, 4)], { type: 'application/json' })
     downloadBlob(blob, '主题.json')
   }
   
   return {
-    // theme: toReactive(theme)
+    // theme: toReactive(theme),
     theme,
     download,
   }

@@ -1,11 +1,14 @@
 <template>
   <ACollapse v-model:activeKey="activeKeys">
-    <ACollapsePanel header="背景" key="1">
+    <ACollapsePanel header="基础" key="base">
+      <AFormItem label="颜色">
+        <ColorsSelect v-model="theme.color" />
+      </AFormItem>
       <AFormItem label="背景色">
         <ColorPicker v-model="(theme.backgroundColor as string)" />
       </AFormItem>
     </ACollapsePanel>
-    <ACollapsePanel header="全局文本" key="2">
+    <ACollapsePanel header="全局文本" key="text">
       <TextStyle
         v-model:color="theme.textStyle.color"
         v-model:fontSize="theme.textStyle.fontSize"
@@ -21,8 +24,9 @@
 import ColorPicker from '../../ColorPicker/index.vue'
 import useGlobal from '@/store/global'
 import TextStyle from '../components/TextStyle.vue'
+import ColorsSelect from '../components/ColorsSelect.vue'
 import { ref } from 'vue';
 
 const { theme } = useGlobal()
-const activeKeys = ref(['1', '2'])
+const activeKeys = ref(['base', 'bg', 'text'])
 </script>

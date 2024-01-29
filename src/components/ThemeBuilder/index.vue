@@ -18,6 +18,7 @@ import Global from './Global/index.vue'
 import Grid from './Grid/index.vue'
 import Title from './Title/index.vue'
 // import Axis from './Axis/index.vue'
+import Series from './Series/index.vue'
 
 const { activeValue, activeItem, items, } = useSelect({
   items: [{
@@ -47,7 +48,7 @@ const { activeValue, activeItem, items, } = useSelect({
   }, {
     value: 'series',
     label: '系列',
-    component: null,
+    component: Series,
   }],
   autoSelect: true,
 })

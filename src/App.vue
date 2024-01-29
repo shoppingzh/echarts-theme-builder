@@ -14,11 +14,12 @@
         <Charts />
       </div>
     </div>
-  
+
     <ADrawer
       v-model:open="popper.design"
       title="主题设计器(Ctrl+B)"
       size="large"
+      width="800px"
       :body-style="{ padding: '12px' }"
       :mask-style="{ backgroundColor: 'rgba(200, 200, 200, .1)' }">
       <ThemeBuilder />

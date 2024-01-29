@@ -10,7 +10,6 @@ import { EChartsOption } from 'echarts';
 const option = computed(() => {
   return {
     grid: {
-      show: true,
     },
     title: {
       text: '树图',
