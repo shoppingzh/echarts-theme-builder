@@ -3,10 +3,10 @@
   <div class="h-full flex flex-col">
     <div class="flex items-center h-[50px] px-4 bg-white shadow-sm">
       <div class="relative flex-1 w-0 text-lg font-semibold">
-        <div class="absolute select-none -left-2 bottom-0 w-5 h-5 bg-pink-800/30 rounded-full pointer-events-none" />
+        <div class="absolute select-none -left-2 bottom-0 w-5 h-5 bg-pink-500/40 rounded-full pointer-events-none" />
         Echarts主题设计器
       </div>
-      <AButton type="primary" @click="popper.design = true">设计(Ctrl+B)</AButton>
+      <AButton type="primary" @click="design()">设计(Ctrl+B)</AButton>
       <AButton type="dashed" danger class="ml-4" @click="download()">下载主题</AButton>
     </div>
     <div class="flex-1 h-0 p-4 overflow-auto">
@@ -23,9 +23,11 @@
     <ThemeBuilder />
   </ADrawer>
 
-  <!-- <AFloatButtonGroup>
-    <AFloatButton></AFloatButton>
-  </AFloatButtonGroup> -->
+  <AFloatButtonGroup>
+    <!-- TODO 改图标 -->
+    <AFloatButton @click="design()">
+    </AFloatButton>
+  </AFloatButtonGroup>
 </template>
 
 <script setup lang="ts">
@@ -39,6 +41,10 @@ const popper = reactive({
   design: false,
 })
 const { download } = useGlobal()
+
+function design() {
+  popper.design = true
+}
 
 hotkeys('ctrl+b', (e) => {
   popper.design = !popper.design
