@@ -15,6 +15,64 @@ export default defineStore('global', () => {
     },
     legend: {},
     tooltip: {},
+    axis: {
+      category: {
+        nameTextStyle: {},
+        axisLine: {
+          lineStyle: {},
+        },
+        splitLine: {
+          lineStyle: {},
+        },
+        axisTick: {
+          lineStyle: {},
+        },
+        axisLabel: {
+        },
+      },
+      value: {
+        nameTextStyle: {},
+        axisLine: {
+          lineStyle: {},
+        },
+        splitLine: {
+          lineStyle: {},
+        },
+        axisTick: {
+          lineStyle: {},
+        },
+        axisLabel: {
+        },
+      },
+      time: {
+        nameTextStyle: {},
+        axisLine: {
+          lineStyle: {},
+        },
+        splitLine: {
+          lineStyle: {},
+        },
+        axisTick: {
+          lineStyle: {},
+        },
+        axisLabel: {
+        },
+      },
+      log: {
+        nameTextStyle: {},
+        axisLine: {
+          lineStyle: {},
+        },
+        splitLine: {
+          lineStyle: {},
+        },
+        axisTick: {
+          lineStyle: {},
+        },
+        axisLabel: {
+        },
+      }
+    },
     series: {
       bar: {
         itemStyle: {},

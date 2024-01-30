@@ -20,6 +20,7 @@ const data = ['北京', '上海', '广东', '福建', '辽宁'].map(o => ({
 const option = computed(() => {
   return {
     grid: {
+      top: 85,
     },
     title: [{
       text: '经典混合图',
@@ -30,11 +31,16 @@ const option = computed(() => {
     }],
     xAxis: {
       type: 'category',
+      name: 'X轴',
       data: data.map(o => o.name),
     },
-    yAxis: {
+    yAxis: [{
       type: 'value',
-    },
+      name: 'Y轴1',
+    }, {
+      type: 'value',
+      name: 'Y轴2',
+    }],
     tooltip: {},
     legend: {},
     series: [{
