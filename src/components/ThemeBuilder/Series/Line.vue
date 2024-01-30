@@ -1,15 +1,7 @@
 <template>
   <ACollapse v-model:active-key="activeKeys">
     <ACollapsePanel header="线条" key="line">
-      <AFormItem label="颜色">
-        <ColorPicker v-model="theme.series.line.itemStyle.color" />
-      </AFormItem>
-      <AFormItem label="宽度">
-        <AInputNumber v-model:value="theme.series.line.lineStyle.width" :default-value="2" />
-      </AFormItem>
-      <AFormItem label="线条类型">
-        <BorderStyleSelect v-model="theme.series.line.lineStyle.type" />
-      </AFormItem>
+      <FastLine :config="theme.series.line.lineStyle" />
       <AFormItem label="平滑曲线">
         <ASwitch v-model:checked="theme.series.line.smooth" />
       </AFormItem>
@@ -36,7 +28,7 @@
         <ColorPicker v-model="theme.series.line.areaStyle.color" />
       </AFormItem>
       <AFormItem label="透明度">
-        <AInputNumber v-model:value="theme.series.line.areaStyle.opacity" :min="0.1" :max="1" />
+        <AInputNumber v-model:value="theme.series.line.areaStyle.opacity" :min="0.1" :max="1" :step="0.1" />
       </AFormItem>
     </ACollapsePanel>
   </ACollapse>
@@ -46,11 +38,8 @@
 import useGlobal from '@/store/global';
 import { ref } from 'vue';
 import ColorPicker from '../../ColorPicker/index.vue'
-import FastBorder from '../components/FastBorder.vue';
-import FastTextStyle from '../components/FastTextStyle.vue';
-import Radius from '../components/Radius.vue';
 import SymbolSelect from '../components/SymbolSelect.vue';
-import BorderStyleSelect from '../components/BorderStyleSelect.vue';
+import FastLine from '../components/FastLine.vue'
 
 const activeKeys = ref(['line', 'dot', 'area'])
 const { theme } = useGlobal()

@@ -30,6 +30,13 @@ export default defineStore('global', () => {
           opacity: 0,
         },
       },
+      pie: {
+        itemStyle: {},
+        label: {},
+        labelLine: {
+          lineStyle: {},
+        },
+      },
     },
   } as Theme
 

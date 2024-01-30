@@ -25,6 +25,7 @@ import SvgIcon from '@/components/SvgIcon/index.vue'
 import useSelect from 'magic-hooks/lib/useSelect'
 import Bar from './Bar.vue'
 import Line from './Line.vue'
+import Pie from './Pie.vue'
 
 const { activeValue: typeValue, activeItem: type, items: types, } = useSelect({
   items: [{
@@ -37,6 +38,11 @@ const { activeValue: typeValue, activeItem: type, items: types, } = useSelect({
     label: '折线图',
     component: Line,
     icon: 'zhexiantu',
+  }, {
+    value: 'pie',
+    label: '饼图',
+    component: Pie,
+    icon: 'bingtu',
   }],
   autoSelect: true,
 })

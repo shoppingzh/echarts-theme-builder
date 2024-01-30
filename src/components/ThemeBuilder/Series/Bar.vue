@@ -2,7 +2,7 @@
   <ACollapse v-model:active-key="activeKeys">
     <ACollapsePanel header="柱子" key="bar">
       <AFormItem label="柱子宽度">
-        <AInputNumber v-model:value="theme.series.bar.barWidth" :default-value="20" />
+        <AInputNumber v-model:value="theme.series.bar.barWidth" :default-value="40" />
       </AFormItem>
       <AFormItem label="颜色">
         <ColorPicker v-model="theme.series.bar.itemStyle.color" />
@@ -34,20 +34,7 @@
     </ACollapsePanel>
 
     <ACollapsePanel header="标签" key="label">
-      <FastTextStyle
-        v-model:color="theme.series.bar.label.color"
-        v-model:fontSize="theme.series.bar.label.fontSize"
-        v-model:fontWeight="theme.series.bar.label.fontWeight"
-        v-model:border-color="theme.series.bar.label.textBorderColor"
-        v-model:border-width="theme.series.bar.label.textBorderWidth"
-        v-model:border-type="theme.series.bar.label.textBorderType" />
-      <AFormItem label="背景色">
-        <ColorPicker v-model="theme.series.bar.label.backgroundColor" />
-      </AFormItem>
-      <AFormItem label="旋转角度">
-        <AInputNumber v-model:value="theme.series.bar.label.rotate" :min="-90" :max="90" :step="15" />
-      </AFormItem>
-      
+      <FastLabel :config="theme.series.bar.label" />
     </ACollapsePanel>
   </ACollapse>
 </template>
@@ -57,7 +44,7 @@ import useGlobal from '@/store/global';
 import { ref } from 'vue';
 import ColorPicker from '../../ColorPicker/index.vue'
 import FastBorder from '../components/FastBorder.vue';
-import FastTextStyle from '../components/FastTextStyle.vue';
+import FastLabel from '../components/FastLabel.vue';
 import Radius from '../components/Radius.vue';
 
 const activeKeys = ref(['bar', 'bg', 'label'])

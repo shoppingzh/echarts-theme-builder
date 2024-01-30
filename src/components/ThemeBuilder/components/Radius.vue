@@ -2,7 +2,8 @@
   <div
     class="relative flex flex-wrap w-[120px] h-[80px] p-2 border-gray-900/80 border-[2px]"
     :style="{ borderRadius: array.map(o => `${o}px`).join(' ') }"
-    @mouseenter="show = true">
+    @mouseenter="show = true"
+    @mouseleave="show = false">
     <div
       v-show="show"
       v-for="(item) in dirs"
