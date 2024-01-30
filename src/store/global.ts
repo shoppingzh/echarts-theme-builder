@@ -23,9 +23,12 @@ export default defineStore('global', () => {
         labelLine: {},
       },
       line: {
-        // itemStyle: {},
-        // lineStyle: {},
-        // areaStyle: {},
+        itemStyle: {},
+        lineStyle: {
+        },
+        areaStyle: {
+          opacity: 0,
+        },
       },
     },
   } as Theme
