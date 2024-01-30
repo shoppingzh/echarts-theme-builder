@@ -26,8 +26,10 @@
     </ADrawer>
   
     <AFloatButtonGroup>
-      <!-- TODO 改图标 -->
       <AFloatButton @click="design()">
+        <template #icon>
+          <SvgIcon name="sheji" />
+        </template>
       </AFloatButton>
     </AFloatButtonGroup>
   </AConfigProvider>
@@ -35,6 +37,7 @@
 
 <script setup lang="ts">
 import Charts from '@/components/Charts/index.vue'
+import SvgIcon from '@/components/SvgIcon/index.vue'
 import ThemeBuilder from '@/components/ThemeBuilder/index.vue'
 import { reactive } from 'vue';
 import hotkeys from 'hotkeys-js'
