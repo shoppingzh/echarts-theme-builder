@@ -68,6 +68,7 @@ const option = computed(() => {
     }, {
       type: 'line',
       name: '系列五',
+      yAxisIndex: 1,
       data: data.map(o => o.value5),
     }]
   } as EChartsOption
