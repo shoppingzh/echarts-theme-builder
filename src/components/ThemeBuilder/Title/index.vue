@@ -31,7 +31,7 @@
 
 <script setup lang="ts">
 import useGlobal from '@/store/global'
-import TextStyle from '../components/TextStyle.vue'
+import TextStyle from '../components/FastTextStyle.vue'
 import Align from '../components/Align.vue';
 import { ref } from 'vue';
 import Space from '../components/Space.vue';

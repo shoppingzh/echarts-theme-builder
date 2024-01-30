@@ -18,9 +18,14 @@ export default defineStore('global', () => {
     series: {
       bar: {
         itemStyle: {},
+        backgroundStyle: {},
+        label: {},
+        labelLine: {},
       },
       line: {
-        // smooth: true,
+        // itemStyle: {},
+        // lineStyle: {},
+        // areaStyle: {},
       },
     },
   } as Theme

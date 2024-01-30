@@ -34,11 +34,10 @@ const space = computed({
     return [theme.grid.top, theme.grid.right, theme.grid.bottom, theme.grid.left] as number[]
   },
   set(newVal) {
-    if (!newVal) return
-    theme.grid.top = newVal[0]
-    theme.grid.right = newVal[1]
-    theme.grid.bottom = newVal[2]
-    theme.grid.left = newVal[3]
+    theme.grid.top = newVal ? newVal[0] : undefined
+    theme.grid.right = newVal ? newVal[1] : undefined
+    theme.grid.bottom = newVal ? newVal[2] : undefined
+    theme.grid.left = newVal ? newVal[3] : undefined
   }
 })
 const activeKeys = ref(['1'])

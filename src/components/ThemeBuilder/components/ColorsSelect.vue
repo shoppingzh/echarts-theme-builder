@@ -14,13 +14,12 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
 import ColorPicker from '../../ColorPicker/index.vue'
-import { watch } from 'vue';
+import useArrayModel from '@/hooks/useArrayModel';
 
 const model = defineModel<any[]>()
 
-const colors = ref<any[]>([])
+const { array: colors } = useArrayModel(model)
 
 function add(index?: number) {
   const realIndex = index == null ? colors.value.length - 1 : index
@@ -31,21 +30,6 @@ function add(index?: number) {
 function remove(index: number) {
   colors.value.splice(index, 1)
 }
-
-function init() {
-  if (model.value && model.value.length) {
-    colors.value = [...model.value]
-  }
-}
-
-init()
-
-watch(colors, () => {
-  model.value = colors.value.length ? [...colors.value] : undefined
-}, {
-  deep: true,
-})
-
 </script>
 
 <style lang="postcss" scoped>

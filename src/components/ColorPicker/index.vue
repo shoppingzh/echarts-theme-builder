@@ -1,5 +1,7 @@
 <template>
-  <div ref="el" />
+  <div class="inline-block">
+    <div ref="el" />
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -35,7 +37,7 @@ function init() {
     theme: 'nano',
     // inline: true,
     sliders: 'h',
-    default: '#000',
+    default: 'rgba(0, 0, 0, 0)',
     swatches: historyList.value,
 
     i18n: {
@@ -125,6 +127,16 @@ function recordHistory(color: string) {
   historyList.value.forEach(color => {
     picker.value.addSwatch(color)
   })
+}
+
+function show() {
+  if (!picker.value) return
+  picker.value.show()
+}
+
+function hide() {
+  if (!picker.value) return
+  picker.value.hide()
 }
 
 onMounted(() => {

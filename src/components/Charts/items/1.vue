@@ -12,6 +12,9 @@ const data = ['北京', '上海', '广东', '福建', '辽宁'].map(o => ({
   name: o,
   value1: random(0, 1000),
   value2: random(0, 1000),
+  value3: random(0, 1000),
+  value4: random(0, 1000),
+  value5: random(0, 1000),
 }))
 
 const option = computed(() => {
@@ -38,6 +41,9 @@ const option = computed(() => {
       type: 'bar',
       name: '系列一',
       data: data.map(o => o.value1),
+      label: {
+        show: true,
+      },
     }, {
       type: 'line',
       name: '系列二',
@@ -45,15 +51,18 @@ const option = computed(() => {
     }, {
       type: 'bar',
       name: '系列三',
-      data: data.map(o => o.value2),
+      data: data.map(o => o.value3),
+      label: {
+        show: true,
+      },
     }, {
       type: 'line',
       name: '系列四',
-      data: data.map(o => o.value2),
+      data: data.map(o => o.value4),
     }, {
       type: 'line',
       name: '系列五',
-      data: data.map(o => o.value2),
+      data: data.map(o => o.value5),
     }]
   } as EChartsOption
 })

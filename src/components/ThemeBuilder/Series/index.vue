@@ -1,5 +1,5 @@
 <template>
-  <div class="h-full flex">
+  <div class="h-full flex overflow-hidden">
     <div class="h-full overflow-auto">
       <div
         v-for="(item, index) in types"
@@ -10,7 +10,7 @@
         {{ item.label }}
       </div>
     </div>
-    <div class="ml-3 flex-1 w-0">
+    <div class="ml-3 flex-1 w-0 overflow-auto">
       <component v-if="type && type.component" :is="type.component" />
       <AEmpty v-else />
     </div>
