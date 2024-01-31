@@ -111,11 +111,11 @@ export default defineStore('global', () => {
     },
   } as Theme
 
-  // const theme = useLocalStorage('theme', defaultTheme, {
-  //   deep: true,
-  // })
+  const theme = useLocalStorage('theme', defaultTheme, {
+    deep: true,
+  })
 
-  const theme = reactive(defaultTheme)
+  // const theme = reactive(defaultTheme)
 
   function download() {
     const blob = new Blob([JSON.stringify(theme, null, 4)], { type: 'application/json' })
@@ -123,8 +123,8 @@ export default defineStore('global', () => {
   }
   
   return {
-    // theme: toReactive(theme),
-    theme,
+    theme: toReactive(theme),
+    // theme,
     download,
   }
 })
