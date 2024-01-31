@@ -120,7 +120,7 @@ export default defineStore('global', () => {
   }
 
   function download() {
-    const blob = new Blob([JSON.stringify(theme, null, 4)], { type: 'application/json' })
+    const blob = new Blob([JSON.stringify(themeRef.value, null, 4)], { type: 'application/json' })
     downloadBlob(blob, '主题.json')
   }
   
