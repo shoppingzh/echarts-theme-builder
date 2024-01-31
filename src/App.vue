@@ -11,9 +11,13 @@
           <SvgIcon name="sheji" class="mr-1 text-base" />
           设计(Ctrl+B)
         </AButton>
-        <AButton type="dashed" danger class="ml-4" @click="download()">
+        <AButton type="dashed" class="ml-4" @click="download()">
           <SvgIcon name="xiazai" class="mr-1 text-base" />
           下载主题
+        </AButton>
+        <AButton type="dashed" class="ml-4" @click="upload">
+          <SvgIcon name="shangchuan" class="mr-1 text-base" />
+          上传主题
         </AButton>
       </div>
       <div class="flex-1 h-0 p-4 overflow-auto">
@@ -30,6 +34,19 @@
       :mask-style="{ backgroundColor: 'rgba(200, 200, 200, .1)' }">
       <ThemeBuilder />
     </ADrawer>
+
+    <AModal
+      v-model:open="popper.upload"
+      title="上传主题">
+      <div class="py-4">
+        <AUpload action="#" @change="handleUploadChange" :multiple="false" :show-upload-list="false" :before-upload="() => false">
+          <div class="p-8 py-12 text-center text-gray-400 border border-gray-200 border-dashed rounded-lg cursor-pointer hover:border-blue-500">
+            <SvgIcon name="wenjian" class="text-[50px]" />
+            <div class="mt-4">点击选择或拖动文件至此上传</div>
+          </div>
+        </AUpload>
+      </div>
+    </AModal>
   
     <AFloatButtonGroup>
       <AFloatButton @click="design()">
@@ -49,14 +66,36 @@ import { reactive } from 'vue';
 import hotkeys from 'hotkeys-js'
 import useGlobal from '@/store/useGlobal'
 import zhCN from 'ant-design-vue/es/locale/zh_CN'
+import { UploadChangeParam } from 'ant-design-vue/es/upload/interface';
 
 const popper = reactive({
   design: false,
+  upload: false,
 })
-const { download } = useGlobal()
+const { replace, download } = useGlobal()
 
 function design() {
   popper.design = true
+}
+
+function upload() {
+  popper.upload = true
+}
+
+function readFile(file: File) {
+  return new Promise<string>((resolve, reject) => {
+    const fr = new FileReader()
+    fr.onload = e => resolve(e.target.result as string)
+    fr.onerror = reject
+    fr.readAsText(file, 'utf-8')
+  })
+}
+
+async function handleUploadChange({ file }: UploadChangeParam) {
+  const json = await readFile(file as any)
+  replace(JSON.parse(json))
+
+  popper.upload = false
 }
 
 hotkeys('ctrl+b', (e) => {
@@ -65,3 +104,8 @@ hotkeys('ctrl+b', (e) => {
 })
 </script>
 
+<style scoped lang="postcss">
+:deep(.ant-upload-select) {
+  @apply block;
+}
+</style>
