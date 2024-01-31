@@ -3,6 +3,7 @@ import { Theme } from '@shoppingzh/tools/lib/echarts'
 import { toReactive, useLocalStorage } from '@vueuse/core'
 import { downloadBlob } from '@shoppingzh/tools/lib/dom'
 import { merge } from 'lodash'
+import dayjs from 'dayjs'
 
 export const DEFAULT_THEME: Theme = {
   textStyle: {},
@@ -121,7 +122,7 @@ export default defineStore('global', () => {
 
   function download() {
     const blob = new Blob([JSON.stringify(themeRef.value, null, 4)], { type: 'application/json' })
-    downloadBlob(blob, '主题.json')
+    downloadBlob(blob, `主题 ${dayjs().format('YYYY-MM-DD HH_mm_ss')}.json`)
   }
   
   return {
