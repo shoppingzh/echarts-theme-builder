@@ -1,6 +1,12 @@
 <template>
   <ACollapse v-model:active-key="activeKeys">
     <ACollapsePanel header="饼子" key="item">
+      <AFormItem label="半径">
+        <div class="flex items-center">
+          <AInputNumber v-model:value="radius1" addon-before="从" addon-after="%" />
+          <AInputNumber v-model:value="radius2" addon-before="到" addon-after="%" class="pl-2" />
+        </div>
+      </AFormItem>
       <AFormItem label="颜色">
         <ColorPicker v-model="theme.series.pie.itemStyle.color" />
       </AFormItem>
@@ -44,16 +50,30 @@
 </template>
 
 <script setup lang="ts">
-import useGlobal from '@/store/global';
+import useGlobal from '@/store/useGlobal';
 import { ref } from 'vue';
 import ColorPicker from '../../ColorPicker/index.vue'
 import FastBorder from '../components/FastBorder.vue'
 // import Radius from '../components/Radius.vue'
 import FastLabel from '../components/FastLabel.vue';
 import FastLine from '../components/FastLine.vue';
+import useArrayModel from '@/hooks/useArrayModel';
+import { toRef } from 'vue';
+import { Ref } from 'vue';
+import useStringToNumber, { createUnitRule } from '@/hooks/useStringToNumber';
+import { computed } from 'vue';
 
 
 const activeKeys = ref(['item', 'label', 'label-line'])
 const { theme } = useGlobal()
+const { array: radiusList } = useArrayModel(toRef(theme.series.pie, 'radius') as Ref<string[]>)
+const { number: radius1 } = useStringToNumber(computed({
+  get() { return radiusList.value[0] },
+  set(newVal) { radiusList.value[0] = newVal }
+}), { rule: createUnitRule('%')})
+const { number: radius2 } = useStringToNumber(computed({
+  get() { return radiusList.value[1] },
+  set(newVal) { radiusList.value[1] = newVal }
+}), { rule: createUnitRule('%')})
 
 </script>

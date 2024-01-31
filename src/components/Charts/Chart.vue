@@ -7,7 +7,7 @@ import useChart from 'magic-hooks/lib/useChart'
 import { computed } from 'vue';
 import { Theme, withTheme } from '@shoppingzh/tools/lib/echarts'
 import { EChartsOption } from 'echarts'
-import useGlogal from '@/store/global'
+import useGlogal from '@/store/useGlobal'
 import { cloneDeep } from 'lodash'
 
 const props = defineProps<{

@@ -9,7 +9,7 @@
       <ColorPicker v-model="colors[index]" />
       <div class="button mt-[2px]" @click="add(index)">+</div>
     </div>
-    <AButton v-if="!colors.length" type="link" @click="add()">新增</AButton>
+    <AButton v-if="!colors.length" type="link" class="!px-0" @click="add()">新增</AButton>
   </div>
 </template>
 

@@ -10,13 +10,13 @@
       <ARadioButton v-for="x in 8" :key="x" :value="x * 100">{{ x * 100 }}</ARadioButton>
     </ARadioGroup>
   </AFormItem>
-  <AFormItem label="文字描边宽度">
+  <AFormItem v-if="!hideBorderWidth" label="文字描边宽度">
     <AInputNumber v-model:value="borderWidth" />
   </AFormItem>
-  <AFormItem label="文字描边颜色">
+  <AFormItem v-if="!hideBorderColor" label="文字描边颜色">
     <ColorPicker v-model="borderColor" />
   </AFormItem>
-  <AFormItem label="文字描边类型">
+  <AFormItem v-if="!hideBorderType" label="文字描边类型">
     <BorderStyleSelect v-model="borderType" />
   </AFormItem>
 </template>
@@ -31,4 +31,10 @@ const fontWeight = defineModel<any>('fontWeight')
 const borderColor = defineModel<any>('borderColor')
 const borderWidth = defineModel<any>('borderWidth')
 const borderType = defineModel<any>('borderType')
+
+defineProps<{
+  hideBorderWidth?: boolean
+  hideBorderColor?: boolean
+  hideBorderType?: boolean
+}>()
 </script>

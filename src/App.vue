@@ -47,7 +47,7 @@ import SvgIcon from '@/components/SvgIcon/index.vue'
 import ThemeBuilder from '@/components/ThemeBuilder/index.vue'
 import { reactive } from 'vue';
 import hotkeys from 'hotkeys-js'
-import useGlobal from '@/store/global'
+import useGlobal from '@/store/useGlobal'
 import zhCN from 'ant-design-vue/es/locale/zh_CN'
 
 const popper = reactive({

@@ -23,7 +23,7 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 import Space from '../components/Space.vue';
-import useGlobal from '@/store/global';
+import useGlobal from '@/store/useGlobal';
 import ColorPicker from '../../ColorPicker/index.vue'
 import { ref } from 'vue';
 

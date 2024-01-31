@@ -18,6 +18,8 @@ import Global from './Global/index.vue'
 import Grid from './Grid/index.vue'
 import Title from './Title/index.vue'
 import Axis from './Axis/index.vue'
+import Legend from './Legend/index.vue'
+import Tooltip from './Tooltip/index.vue'
 import Series from './Series/index.vue'
 
 const { activeValue, activeItem, items, } = useSelect({
@@ -40,11 +42,11 @@ const { activeValue, activeItem, items, } = useSelect({
   }, {
     value: 'legend',
     label: '图例',
-    component: null,
+    component: Legend,
   }, {
     value: 'tooltip',
     label: 'Tooltip',
-    component: null,
+    component: Tooltip,
   }, {
     value: 'series',
     label: '系列',

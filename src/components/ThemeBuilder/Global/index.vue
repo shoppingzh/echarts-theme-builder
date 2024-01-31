@@ -22,7 +22,7 @@
 
 <script setup lang="ts">
 import ColorPicker from '../../ColorPicker/index.vue'
-import useGlobal from '@/store/global'
+import useGlobal from '@/store/useGlobal'
 import TextStyle from '../components/FastTextStyle.vue'
 import ColorsSelect from '../components/ColorsSelect.vue'
 import { ref } from 'vue';

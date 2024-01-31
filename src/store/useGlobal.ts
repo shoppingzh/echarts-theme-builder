@@ -13,8 +13,21 @@ export default defineStore('global', () => {
       textStyle: {},
       subtextStyle: {},
     },
-    legend: {},
-    tooltip: {},
+    legend: {
+      plain: {
+        itemStyle: {},
+        lineStyle: {},
+        textStyle: {},
+      },
+      scroll: {
+        itemStyle: {},
+        lineStyle: {},
+        textStyle: {},
+      }
+    },
+    tooltip: {
+      textStyle: {},
+    },
     axis: {
       category: {
         nameTextStyle: {},

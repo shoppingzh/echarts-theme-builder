@@ -5,7 +5,7 @@
   <AFormItem label="边框颜色">
     <ColorPicker v-model="color" />
   </AFormItem>
-  <AFormItem label="边框类型">
+  <AFormItem v-if="!hideType" label="边框类型">
     <BorderStyleSelect v-model="type" />
   </AFormItem>
 </template>
@@ -17,4 +17,8 @@ import BorderStyleSelect from './BorderStyleSelect.vue';
 const width = defineModel<any>('width')
 const color = defineModel<any>('color')
 const type = defineModel<any>('type')
+
+defineProps<{
+  hideType?: boolean
+}>()
 </script>

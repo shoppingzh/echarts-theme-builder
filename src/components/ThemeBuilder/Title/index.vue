@@ -30,7 +30,7 @@
 </template>
 
 <script setup lang="ts">
-import useGlobal from '@/store/global'
+import useGlobal from '@/store/useGlobal'
 import TextStyle from '../components/FastTextStyle.vue'
 import Align from '../components/Align.vue';
 import { ref } from 'vue';

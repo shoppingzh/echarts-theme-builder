@@ -42,7 +42,9 @@ const option = computed(() => {
       name: 'Y轴2',
     }],
     tooltip: {},
-    legend: {},
+    legend: {
+      type: 'plain',
+    },
     series: [{
       type: 'bar',
       name: '系列一',

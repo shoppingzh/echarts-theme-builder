@@ -35,7 +35,7 @@
 </template>
 
 <script setup lang="ts">
-import useGlobal from '@/store/global';
+import useGlobal from '@/store/useGlobal';
 import { ref } from 'vue';
 import ColorPicker from '../../ColorPicker/index.vue'
 import SymbolSelect from '../components/SymbolSelect.vue';
