@@ -1,7 +1,6 @@
 import { defineStore } from 'pinia'
 import { Theme } from '@shoppingzh/tools/lib/echarts'
 import { toReactive, useLocalStorage } from '@vueuse/core'
-import { reactive } from 'vue'
 import { downloadBlob } from '@shoppingzh/tools/lib/dom'
 
 export default defineStore('global', () => {
@@ -111,9 +110,9 @@ export default defineStore('global', () => {
     },
   } as Theme
 
-  const theme = useLocalStorage('theme', defaultTheme, {
+  const theme = toReactive(useLocalStorage('theme', defaultTheme, {
     deep: true,
-  })
+  }))
 
   // const theme = reactive(defaultTheme)
 
@@ -123,8 +122,7 @@ export default defineStore('global', () => {
   }
   
   return {
-    theme: toReactive(theme),
-    // theme,
+    theme,
     download,
   }
 })
