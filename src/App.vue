@@ -37,8 +37,9 @@
 
     <AModal
       v-model:open="popper.upload"
-      title="上传主题">
-      <div class="py-4">
+      title="上传主题"
+      :footer="null">
+      <div class="py-8">
         <AUpload action="#" @change="handleUploadChange" :multiple="false" :show-upload-list="false" :before-upload="() => false">
           <div class="p-8 py-12 text-center text-gray-400 border border-gray-200 border-dashed rounded-lg cursor-pointer hover:border-blue-500">
             <SvgIcon name="wenjian" class="text-[50px]" />
