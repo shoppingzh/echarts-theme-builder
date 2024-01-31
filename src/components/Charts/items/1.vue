@@ -30,20 +30,16 @@ const option = computed(() => {
       right: 0,
     }],
     xAxis: {
-      type: 'category',
       name: 'X轴',
       data: data.map(o => o.name),
     },
     yAxis: [{
-      type: 'value',
       name: 'Y轴1',
     }, {
-      type: 'value',
       name: 'Y轴2',
     }],
     tooltip: {},
     legend: {
-      type: 'plain',
     },
     series: [{
       type: 'bar',
