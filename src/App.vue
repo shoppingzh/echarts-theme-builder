@@ -11,6 +11,10 @@
           <SvgIcon name="sheji" class="mr-1 text-base" />
           设计(Ctrl+B)
         </AButton>
+        <AButton type="dashed" dange class="ml-4" @click="redesign()">
+          <SvgIcon name="xunhuan" class="mr-1 text-base" />
+          重新设计
+        </AButton>
         <AButton type="dashed" class="ml-4" @click="download()">
           <SvgIcon name="xiazai" class="mr-1 text-base" />
           下载主题
@@ -68,6 +72,7 @@ import hotkeys from 'hotkeys-js'
 import useGlobal from '@/store/useGlobal'
 import zhCN from 'ant-design-vue/es/locale/zh_CN'
 import { UploadChangeParam } from 'ant-design-vue/es/upload/interface';
+import { Modal } from 'ant-design-vue';
 
 const popper = reactive({
   design: false,
@@ -77,6 +82,16 @@ const { replace, download } = useGlobal()
 
 function design() {
   popper.design = true
+}
+
+async function redesign() {
+  Modal.confirm({
+    title: '提示',
+    content: '清空当前设计，重新开始，确定继续？（建议先保存当前设计）',
+    onOk: () => {
+      replace({})
+    }
+  })
 }
 
 function upload() {
