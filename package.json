@@ -10,7 +10,7 @@
     "gen-icons": "node ./build/gen-icons.js"
   },
   "dependencies": {
-    "@shoppingzh/tools": "^0.0.3",
+    "@shoppingzh/tools": "^0.0.4",
     "@simonwep/pickr": "^1.9.0",
     "@vueuse/core": "^10.7.2",
     "ant-design-vue": "4.1.1",
