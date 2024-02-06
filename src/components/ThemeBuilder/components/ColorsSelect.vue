@@ -5,9 +5,9 @@
       v-for="(_, index) in colors"
       :key="`${index}/${colors.length}`"
       :class="{ 'ml-2': index > 0 }">
-      <div class="button" @click="remove(index)">-</div>
+      <div class="button mb-1" @click="remove(index)">-</div>
       <ColorPicker v-model="colors[index]" />
-      <div class="button mt-[2px]" @click="add(index)">+</div>
+      <div class="button" @click="add(index)">+</div>
     </div>
     <AButton v-if="!colors.length" type="link" class="!px-0" @click="add()">新增</AButton>
   </div>
