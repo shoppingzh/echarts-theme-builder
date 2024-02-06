@@ -23,6 +23,12 @@
           <SvgIcon name="shangchuan" class="mr-1 text-base" />
           上传主题
         </AButton>
+        <div class="px-2">
+          <ADivider type="vertical" />
+        </div>
+        <div class="cursor-pointer" @click="toRepository">
+          <SvgIcon name="github" class="text-3xl" />
+        </div>
       </div>
       <div class="flex-1 h-0 p-4 overflow-auto">
         <Charts />
@@ -112,6 +118,10 @@ async function handleUploadChange({ file }: UploadChangeParam) {
   replace(JSON.parse(json))
 
   popper.upload = false
+}
+
+function toRepository() {
+  window.open('https://github.com/shoppingzh/echarts-theme-builder')
 }
 
 hotkeys('ctrl+b', (e) => {
