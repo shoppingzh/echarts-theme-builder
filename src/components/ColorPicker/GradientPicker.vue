@@ -100,7 +100,7 @@ function addStep(row?: any, index?: number) {
   const nextIndex = index == null ? model.value.colorStops.length - 1 : index
   model.value.colorStops.splice(nextIndex + 1, 0 ,{
     color: row ? row.color : 'rgba(0, 0, 0, 0)',
-    offset: row ? row.offset : 0,
+    offset: row ? Math.min(row.offset + 1, 1) : 0,
   })
 }
 
