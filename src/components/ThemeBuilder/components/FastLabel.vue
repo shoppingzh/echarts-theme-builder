@@ -15,8 +15,8 @@
 </template>
 
 <script setup lang="ts">
-import { toRefs } from 'vue';
-import FastTextStyle from './FastTextStyle.vue';
+import { toRefs } from 'vue'
+import FastTextStyle from './FastTextStyle.vue'
 
 const props = defineProps<{
   config: Record<string, any>

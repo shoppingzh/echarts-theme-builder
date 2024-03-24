@@ -10,8 +10,8 @@
         <AInputNumber v-model:value="model.r" :min="0" :max="1" :step="0.1" />
       </AFormItem>
     </AForm>
-  
-  
+
+
     <div class="mt-3">
       <ATable :data-source="model.colorStops" :columns="columns" :pagination="false">
         <template #emptyText>
@@ -39,12 +39,12 @@
 </template>
 
 <script setup lang="ts">
-import useSelect from 'magic-hooks/lib/useSelect';
-import NativePicker from './NativePicker.vue';
-import { computed } from 'vue';
-import { ColumnType } from 'ant-design-vue/es/table';
+import useSelect from 'magic-hooks/lib/useSelect'
+import NativePicker from './NativePicker.vue'
+import { computed } from 'vue'
+import { ColumnType } from 'ant-design-vue/es/table'
 import { isHorizontal, isVertical, isLinearGradient, isRadialGradient, } from './util'
-import { LinearGradientObject, RadialGradientObject } from 'echarts';
+import { LinearGradientObject, RadialGradientObject } from 'echarts'
 
 const model = defineModel<LinearGradientObject | RadialGradientObject>()
 const props = defineProps<{
@@ -98,7 +98,7 @@ const columns = computed(() => {
 
 function addStep(row?: any, index?: number) {
   const nextIndex = index == null ? model.value.colorStops.length - 1 : index
-  model.value.colorStops.splice(nextIndex + 1, 0 ,{
+  model.value.colorStops.splice(nextIndex + 1, 0, {
     color: row ? row.color : 'rgba(0, 0, 0, 0)',
     offset: row ? Math.min(row.offset + 1, 1) : 0,
   })

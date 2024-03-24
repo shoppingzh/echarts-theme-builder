@@ -1,6 +1,6 @@
 <template>
   <ACollapse v-model:active-key="activeKeys">
-    <ACollapsePanel header="线条" key="line">
+    <ACollapsePanel key="line" header="线条">
       <FastLine :config="theme.series.line.lineStyle" />
       <AFormItem label="平滑曲线">
         <ASwitch v-model:checked="theme.series.line.smooth" />
@@ -9,7 +9,7 @@
         <ASwitch v-model:checked="theme.series.line.step" />
       </AFormItem>
     </ACollapsePanel>
-    <ACollapsePanel header="点" key="dot">
+    <ACollapsePanel key="dot" header="点">
       <AFormItem label="隐藏">
         <ASwitch v-model:checked="theme.series.line.showSymbol" :checked-value="false" :un-checked-value="true" />
       </AFormItem>
@@ -23,7 +23,7 @@
         <AInputNumber v-model:value="theme.series.line.symbolRotate" :step="15" :min="0" :max="360" />
       </AFormItem>
     </ACollapsePanel>
-    <ACollapsePanel header="面积" key="area">
+    <ACollapsePanel key="area" header="面积">
       <AFormItem label="颜色" tooltip="设置后将统一为一种颜色，谨慎设置">
         <ColorPicker v-model="theme.series.line.areaStyle.color" />
       </AFormItem>
@@ -35,10 +35,10 @@
 </template>
 
 <script setup lang="ts">
-import useGlobal from '@/store/useGlobal';
-import { ref } from 'vue';
+import useGlobal from '@/store/useGlobal'
+import { ref } from 'vue'
 import ColorPicker from '../../ColorPicker/index.vue'
-import SymbolSelect from '../components/SymbolSelect.vue';
+import SymbolSelect from '../components/SymbolSelect.vue'
 import FastLine from '../components/FastLine.vue'
 
 const activeKeys = ref(['line', 'dot', 'area'])

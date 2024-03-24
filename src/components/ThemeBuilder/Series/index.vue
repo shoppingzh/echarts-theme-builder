@@ -4,7 +4,7 @@
       <Select v-model="typeValue" :items="types" />
     </div>
     <div class="ml-3 flex-1 w-0 overflow-auto">
-      <component v-if="type && type.component" :is="type.component" />
+      <component :is="type.component" v-if="type && type.component" />
       <AEmpty v-else />
     </div>
   </div>
@@ -37,4 +37,3 @@ const { activeValue: typeValue, activeItem: type, items: types, } = useSelect({
   autoSelect: true,
 })
 </script>
-

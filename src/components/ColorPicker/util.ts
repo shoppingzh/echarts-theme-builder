@@ -1,4 +1,4 @@
-import { Color, LinearGradientObject, RadialGradientObject } from "echarts";
+import { Color, LinearGradientObject, RadialGradientObject } from 'echarts'
 
 type GradientObject = LinearGradientObject | RadialGradientObject
 

@@ -1,6 +1,6 @@
 <template>
   <ACollapse v-model:active-key="activeKeys">
-    <ACollapsePanel header="名称" key="name">
+    <ACollapsePanel key="name" header="名称">
       <FastTextStyle
         v-model:color="config.nameTextStyle.color"
         v-model:font-size="config.nameTextStyle.fontSize"
@@ -13,14 +13,14 @@
       </AFormItem>
     </ACollapsePanel>
 
-    <ACollapsePanel header="轴线" key="line">
+    <ACollapsePanel key="line" header="轴线">
       <FastLine :config="config.axisLine.lineStyle" />
     </ACollapsePanel>
-    <ACollapsePanel header="标签" key="label">
+    <ACollapsePanel key="label" header="标签">
       <FastLabel :config="config.axisLabel" />
     </ACollapsePanel>
 
-    <ACollapsePanel header="刻度" key="tick">
+    <ACollapsePanel key="tick" header="刻度">
       <AFormItem label="长度">
         <AInputNumber v-model:value="config.axisTick.length" :default-value="5" />
       </AFormItem>
@@ -29,19 +29,19 @@
       </AFormItem>
       <FastLine :config="config.axisTick.lineStyle" />
     </ACollapsePanel>
-    <ACollapsePanel header="分割线" key="split-line">
+    <ACollapsePanel key="split-line" header="分割线">
       <FastLine :config="config.splitLine.lineStyle" />
     </ACollapsePanel>
   </ACollapse>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref } from 'vue'
 import FastTextStyle from '../components/FastTextStyle.vue'
-import FastLine from '../components/FastLine.vue';
-import { XAXisComponentOption } from 'echarts';
-import { toRefs } from 'vue';
-import FastLabel from '../components/FastLabel.vue';
+import FastLine from '../components/FastLine.vue'
+import { XAXisComponentOption } from 'echarts'
+import { toRefs } from 'vue'
+import FastLabel from '../components/FastLabel.vue'
 
 const props = defineProps<{
   config: XAXisComponentOption

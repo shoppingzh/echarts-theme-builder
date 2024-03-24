@@ -1,6 +1,6 @@
 <template>
   <ACollapse v-model:active-key="activeKeys">
-    <ACollapsePanel header="图形" key="graph">
+    <ACollapsePanel key="graph" header="图形">
       <AFormItem label="图标">
         <SymbolSelect v-model="config.icon" />
       </AFormItem>
@@ -17,8 +17,8 @@
         <ColorPicker v-model="config.itemStyle.color" />
       </AFormItem>
     </ACollapsePanel>
-    <ACollapsePanel header="文字" key="text">
-      <FastTextStyle 
+    <ACollapsePanel key="text" header="文字">
+      <FastTextStyle
         v-model:color="config.textStyle.color"
         v-model:font-size="config.textStyle.fontSize"
         v-model:font-weight="config.textStyle.fontWeight"
@@ -30,11 +30,11 @@
 </template>
 
 <script setup lang="ts">
-import { LegendComponentOption } from 'echarts';
-import { toRefs } from 'vue';
-import { ref } from 'vue';
+import { LegendComponentOption } from 'echarts'
+import { toRefs } from 'vue'
+import { ref } from 'vue'
 import ColorPicker from '../../ColorPicker/index.vue'
-import SymbolSelect from '../components/SymbolSelect.vue';
+import SymbolSelect from '../components/SymbolSelect.vue'
 
 const activeKeys = ref(['graph', 'text'])
 

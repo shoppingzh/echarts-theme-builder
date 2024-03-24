@@ -3,9 +3,9 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue';
+import { computed } from 'vue'
 import Chart from '../Chart.vue'
-import { EChartsOption } from 'echarts';
+import { EChartsOption } from 'echarts'
 import { random } from 'lodash'
 
 const data = ['北京', '上海', '广东', '福建', '辽宁'].map(o => ({

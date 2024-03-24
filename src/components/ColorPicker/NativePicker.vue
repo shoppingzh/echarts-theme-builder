@@ -9,12 +9,12 @@ import Picker from '@simonwep/pickr'
 import '@simonwep/pickr/dist/themes/nano.min.css'
 import '@simonwep/pickr/dist/themes/classic.min.css'
 import '@simonwep/pickr/dist/themes/monolith.min.css'
-import { onUnmounted } from 'vue';
-import { shallowRef } from 'vue';
-import { onMounted } from 'vue';
-import { ref } from 'vue';
-import { useLocalStorage } from '@vueuse/core';
-import { computed } from 'vue';
+import { onUnmounted } from 'vue'
+import { shallowRef } from 'vue'
+import { onMounted } from 'vue'
+import { ref } from 'vue'
+import { useLocalStorage } from '@vueuse/core'
+import { computed } from 'vue'
 import { remove } from '@shoppingzh/tools/lib/array'
 
 const model = defineModel<string>()
@@ -45,12 +45,12 @@ function init() {
     swatches: historyList.value,
 
     i18n: {
-      "btn:save": '保存',
-      "aria:btn:save": '保存',
-      "btn:cancel": '取消',
-      "aria:btn:cancel": '取消',
-      "btn:clear": '清空',
-      "aria:btn:clear": '清空',
+      'btn:save': '保存',
+      'aria:btn:save': '保存',
+      'btn:cancel': '取消',
+      'aria:btn:cancel': '取消',
+      'btn:clear': '清空',
+      'aria:btn:clear': '清空',
     },
     components: {
       hue: true,
@@ -78,7 +78,7 @@ function init() {
       show()
     }
   }
-  
+
   const onSave = (color: any, picker: Picker) => {
     // console.log(color);
     if (color == null) { // 清空
@@ -94,7 +94,7 @@ function init() {
   const onCancel = () => {
     picker.value.hide()
   }
-  
+
   picker.value.on('init', onInit)
   picker.value.on('save', onSave)
   picker.value.on('cancel', onCancel)
@@ -125,7 +125,7 @@ function recordHistory(color: string) {
 
   // 最多保存20个
   if (historyList.value.length > maxHistoryCount) {
-    for (let i = maxHistoryCount; i < historyList.value.length; i++) {
+    for (let i = maxHistoryCount;i < historyList.value.length;i++) {
       remove(historyList.value, i)
     }
   }
@@ -156,7 +156,6 @@ onMounted(() => {
 onUnmounted(() => {
   destroy && destroy()
 })
-
 
 
 </script>

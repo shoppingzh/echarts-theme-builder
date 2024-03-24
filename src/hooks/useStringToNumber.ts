@@ -1,4 +1,4 @@
-import { Ref, computed } from "vue"
+import { Ref, computed } from 'vue'
 
 interface Rule {
   from: (num: number) => string

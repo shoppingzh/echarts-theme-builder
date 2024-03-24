@@ -1,6 +1,6 @@
 <template>
   <ACollapse v-model:active-key="activeKeys">
-    <ACollapsePanel header="饼子" key="item">
+    <ACollapsePanel key="item" header="饼子">
       <AFormItem label="半径">
         <div class="flex items-center">
           <AInputNumber v-model:value="radius1" addon-before="从" addon-after="%" />
@@ -24,7 +24,7 @@
         <Radius v-model="theme.series.pie.itemStyle.borderRadius" />
       </AFormItem> -->
     </ACollapsePanel>
-    <ACollapsePanel header="标签" key="label">
+    <ACollapsePanel key="label" header="标签">
       <AFormItem label="位置">
         <ARadioGroup v-model:value="theme.series.pie.label.position">
           <ARadio value="outside">外面</ARadio>
@@ -34,7 +34,7 @@
       </AFormItem>
       <FastLabel :config="theme.series.pie.label" />
     </ACollapsePanel>
-    <ACollapsePanel header="标签线" key="label-line">
+    <ACollapsePanel key="label-line" header="标签线">
       <AFormItem label="第一段长度">
         <AInputNumber v-model:value="theme.series.pie.labelLine.length" :default-value="10" />
       </AFormItem>
@@ -50,30 +50,38 @@
 </template>
 
 <script setup lang="ts">
-import useGlobal from '@/store/useGlobal';
-import { ref } from 'vue';
+import useGlobal from '@/store/useGlobal'
+import { ref } from 'vue'
 import ColorPicker from '../../ColorPicker/index.vue'
 import FastBorder from '../components/FastBorder.vue'
 // import Radius from '../components/Radius.vue'
-import FastLabel from '../components/FastLabel.vue';
-import FastLine from '../components/FastLine.vue';
-import useArrayModel from '@/hooks/useArrayModel';
-import { toRef } from 'vue';
-import { Ref } from 'vue';
-import useStringToNumber, { createUnitRule } from '@/hooks/useStringToNumber';
-import { computed } from 'vue';
+import FastLabel from '../components/FastLabel.vue'
+import FastLine from '../components/FastLine.vue'
+import useArrayModel from '@/hooks/useArrayModel'
+import { toRef } from 'vue'
+import { Ref } from 'vue'
+import useStringToNumber, { createUnitRule } from '@/hooks/useStringToNumber'
+import { computed } from 'vue'
 
 
 const activeKeys = ref(['item', 'label', 'label-line'])
 const { theme } = useGlobal()
 const { array: radiusList } = useArrayModel(toRef(theme.series.pie, 'radius') as Ref<string[]>)
 const { number: radius1 } = useStringToNumber(computed({
-  get() { return radiusList.value[0] },
-  set(newVal) { radiusList.value[0] = newVal }
-}), { rule: createUnitRule('%')})
+  get() {
+    return radiusList.value[0]
+  },
+  set(newVal) {
+    radiusList.value[0] = newVal
+  }
+}), { rule: createUnitRule('%') })
 const { number: radius2 } = useStringToNumber(computed({
-  get() { return radiusList.value[1] },
-  set(newVal) { radiusList.value[1] = newVal }
-}), { rule: createUnitRule('%')})
+  get() {
+    return radiusList.value[1]
+  },
+  set(newVal) {
+    radiusList.value[1] = newVal
+  }
+}), { rule: createUnitRule('%') })
 
 </script>

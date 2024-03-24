@@ -1,4 +1,4 @@
-import { Ref, ref, watch } from "vue";
+import { Ref, ref, watch } from 'vue'
 
 export default function<T>(model: Ref<T[]>) {
 

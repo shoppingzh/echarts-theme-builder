@@ -5,9 +5,9 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue';
-import { isGradientColor, isHorizontal, isNormalColor } from './util';
-import { Color, LinearGradientObject } from 'echarts';
+import { computed } from 'vue'
+import { isGradientColor, isHorizontal, isNormalColor } from './util'
+import { Color, LinearGradientObject } from 'echarts'
 
 const props = defineProps<{
   color: Color

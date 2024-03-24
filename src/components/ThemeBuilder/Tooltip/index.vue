@@ -1,6 +1,6 @@
 <template>
   <ACollapse v-model:active-key="activeKeys">
-    <ACollapsePanel header="基础" key="base">
+    <ACollapsePanel key="base" header="基础">
       <AFormItem label="边距">
         <Space v-model="theme.tooltip.padding" />
       </AFormItem>
@@ -21,7 +21,7 @@
         <ASwitch v-model:checked="theme.tooltip.enterable" />
       </AFormItem>
     </ACollapsePanel>
-    <ACollapsePanel header="背景/边框" key="bg">
+    <ACollapsePanel key="bg" header="背景/边框">
       <AFormItem label="背景色">
         <ColorPicker v-model="theme.tooltip.backgroundColor" />
       </AFormItem>
@@ -33,8 +33,8 @@
         <Radius v-model="theme.tooltip.borderRadius" />
       </AFormItem> -->
     </ACollapsePanel>
-    <ACollapsePanel header="文字" key="text">
-      <FastTextStyle 
+    <ACollapsePanel key="text" header="文字">
+      <FastTextStyle
         v-model:color="theme.tooltip.textStyle.color"
         v-model:font-size="theme.tooltip.textStyle.fontSize"
         v-model:font-weight="theme.tooltip.textStyle.fontWeight"
@@ -46,13 +46,13 @@
 </template>
 
 <script setup lang="ts">
-import useGlobal from '@/store/useGlobal';
-import { ref } from 'vue';
+import useGlobal from '@/store/useGlobal'
+import { ref } from 'vue'
 import ColorPicker from '../../ColorPicker/index.vue'
-import FastBorder from '../components/FastBorder.vue';
+import FastBorder from '../components/FastBorder.vue'
 // import Radius from '../components/Radius.vue';
-import FastTextStyle from '../components/FastTextStyle.vue';
-import Space from '../components/Space.vue';
+import FastTextStyle from '../components/FastTextStyle.vue'
+import Space from '../components/Space.vue'
 
 const activeKeys = ref(['base', 'bg', 'text'])
 const { theme } = useGlobal()

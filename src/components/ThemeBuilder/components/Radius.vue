@@ -5,8 +5,8 @@
     @mouseenter="show = true"
     @mouseleave="show = false">
     <div
-      v-show="show"
       v-for="(item) in dirs"
+      v-show="show"
       :key="item.name"
       :class="[`is-${item.name}`]"
       class="absolute z-[1] rounded-full shadow-lg cursor-pointer text-xs">
@@ -26,18 +26,18 @@
 </template>
 
 <script setup lang="ts">
-import useArrayModel from '@/hooks/useArrayModel';
-import { ref } from 'vue';
+import useArrayModel from '@/hooks/useArrayModel'
+import { ref } from 'vue'
 
 interface Dir {
   name: 'lt' | 'rt' | 'rb' | 'lb'
   index: number
 }
 const dirs: Dir[] = [
-  { name:'lt', index: 0 },
-  { name:'rt', index: 1 },
-  { name:'lb', index: 3 },
-  { name:'rb', index: 2 },
+  { name: 'lt', index: 0 },
+  { name: 'rt', index: 1 },
+  { name: 'lb', index: 3 },
+  { name: 'rb', index: 2 },
 ]
 const model = defineModel<any[]>()
 const { array } = useArrayModel(model)
@@ -55,7 +55,7 @@ function substract(index: number) {
 }
 
 if (array.value.length < 4) {
-  for (let i = array.value.length - 1; i < 4; i++) {
+  for (let i = array.value.length - 1;i < 4;i++) {
     array.value[i] = 0
   }
 }

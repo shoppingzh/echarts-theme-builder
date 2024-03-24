@@ -124,7 +124,7 @@ export default defineStore('global', () => {
     const blob = new Blob([JSON.stringify(themeRef.value, null, 4)], { type: 'application/json' })
     downloadBlob(blob, `主题 ${dayjs().format('YYYY-MM-DD HH_mm_ss')}.json`)
   }
-  
+
   return {
     theme,
     replace,

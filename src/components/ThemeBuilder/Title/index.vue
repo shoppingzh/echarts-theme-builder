@@ -1,6 +1,6 @@
 <template>
   <ACollapse v-model:activeKey="activeKeys">
-    <ACollapsePanel header="常规" key="1">
+    <ACollapsePanel key="1" header="常规">
       <AFormItem label="对齐方式">
         <Align v-model="theme.title.textAlign" />
       </AFormItem>
@@ -8,7 +8,7 @@
         <Space v-model="theme.title.padding" />
       </AFormItem>
     </ACollapsePanel>
-    <ACollapsePanel header="文本" key="2">
+    <ACollapsePanel key="2" header="文本">
       <TextStyle
         v-model:color="theme.title.textStyle.color"
         v-model:fontSize="theme.title.textStyle.fontSize"
@@ -17,7 +17,7 @@
         v-model:borderWidth="theme.title.textStyle.textBorderWidth"
         v-model:borderType="theme.title.textStyle.textBorderType" />
     </ACollapsePanel>
-    <ACollapsePanel header="二级标题文本" key="3">
+    <ACollapsePanel key="3" header="二级标题文本">
       <TextStyle
         v-model:color="theme.title.subtextStyle.color"
         v-model:fontSize="theme.title.subtextStyle.fontSize"
@@ -32,9 +32,9 @@
 <script setup lang="ts">
 import useGlobal from '@/store/useGlobal'
 import TextStyle from '../components/FastTextStyle.vue'
-import Align from '../components/Align.vue';
-import { ref } from 'vue';
-import Space from '../components/Space.vue';
+import Align from '../components/Align.vue'
+import { ref } from 'vue'
+import Space from '../components/Space.vue'
 
 const { theme } = useGlobal()
 

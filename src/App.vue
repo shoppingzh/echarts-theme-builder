@@ -50,7 +50,7 @@
       title="上传主题"
       :footer="null">
       <div class="py-8">
-        <AUpload action="#" @change="handleUploadChange" :multiple="false" :show-upload-list="false" :before-upload="() => false">
+        <AUpload action="#" :multiple="false" :show-upload-list="false" :before-upload="() => false" @change="handleUploadChange">
           <div class="p-8 py-12 text-center text-gray-400 border border-gray-200 border-dashed rounded-lg cursor-pointer hover:border-blue-500">
             <SvgIcon name="wenjian" class="text-[50px]" />
             <div class="mt-4">点击选择或拖动文件至此上传</div>
@@ -58,7 +58,7 @@
         </AUpload>
       </div>
     </AModal>
-  
+
     <AFloatButtonGroup>
       <AFloatButton @click="design()">
         <template #icon>
@@ -73,12 +73,12 @@
 import Charts from '@/components/Charts/index.vue'
 import SvgIcon from '@/components/SvgIcon/index.vue'
 import ThemeBuilder from '@/components/ThemeBuilder/index.vue'
-import { reactive } from 'vue';
+import { reactive } from 'vue'
 import hotkeys from 'hotkeys-js'
 import useGlobal from '@/store/useGlobal'
 import zhCN from 'ant-design-vue/es/locale/zh_CN'
-import { UploadChangeParam } from 'ant-design-vue/es/upload/interface';
-import { Modal } from 'ant-design-vue';
+import { UploadChangeParam } from 'ant-design-vue/es/upload/interface'
+import { Modal } from 'ant-design-vue'
 
 const popper = reactive({
   design: false,

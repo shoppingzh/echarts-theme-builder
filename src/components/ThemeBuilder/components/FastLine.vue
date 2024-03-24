@@ -11,7 +11,7 @@
 </template>
 
 <script setup lang="ts">
-import { toRefs } from 'vue';
+import { toRefs } from 'vue'
 import ColorPicker from '../../ColorPicker/index.vue'
 import BorderStyleSelect from './BorderStyleSelect.vue'
 

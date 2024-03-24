@@ -15,7 +15,7 @@
 
 <script setup lang="ts">
 import ColorPicker from '../../ColorPicker/index.vue'
-import useArrayModel from '@/hooks/useArrayModel';
+import useArrayModel from '@/hooks/useArrayModel'
 
 const model = defineModel<any[]>()
 

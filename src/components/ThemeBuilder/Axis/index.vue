@@ -12,8 +12,8 @@
 <script setup lang="ts">
 import useSelect from 'magic-hooks/lib/useSelect'
 import Select from '../components/Select.vue'
-import Value from './Value.vue';
-import useGlobal from '@/store/useGlobal';
+import Value from './Value.vue'
+import useGlobal from '@/store/useGlobal'
 
 const { theme } = useGlobal()
 const { activeValue: typeValue, activeItem: type, items: types, } = useSelect({

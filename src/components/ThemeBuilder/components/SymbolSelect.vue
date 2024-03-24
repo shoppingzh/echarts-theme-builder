@@ -8,7 +8,7 @@
 </template>
 
 <script setup lang="ts">
-import useSelect from 'magic-hooks/lib/useSelect';
+import useSelect from 'magic-hooks/lib/useSelect'
 
 const model = defineModel<string>()
 

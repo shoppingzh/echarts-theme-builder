@@ -1,6 +1,6 @@
 <template>
   <ACollapse v-model:active-key="activeKeys">
-    <ACollapsePanel header="基础" key="1">
+    <ACollapsePanel key="1" header="基础">
       <AFormItem label="显示">
         <ASwitch v-model:checked="theme.grid.show" />
       </AFormItem>
@@ -21,11 +21,11 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue';
-import Space from '../components/Space.vue';
-import useGlobal from '@/store/useGlobal';
+import { computed } from 'vue'
+import Space from '../components/Space.vue'
+import useGlobal from '@/store/useGlobal'
 import ColorPicker from '../../ColorPicker/index.vue'
-import { ref } from 'vue';
+import { ref } from 'vue'
 
 const { theme } = useGlobal()
 

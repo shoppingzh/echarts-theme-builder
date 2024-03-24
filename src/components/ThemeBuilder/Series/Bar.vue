@@ -1,6 +1,6 @@
 <template>
   <ACollapse v-model:active-key="activeKeys">
-    <ACollapsePanel header="柱子" key="bar">
+    <ACollapsePanel key="bar" header="柱子">
       <AFormItem label="柱子宽度">
         <AInputNumber v-model:value="theme.series.bar.barWidth" :default-value="40" />
       </AFormItem>
@@ -20,7 +20,7 @@
       </AFormItem>
     </ACollapsePanel>
 
-    <ACollapsePanel header="背景" key="bg">
+    <ACollapsePanel key="bg" header="背景">
       <AFormItem label="显示">
         <ASwitch v-model:checked="theme.series.bar.showBackground" />
       </AFormItem>
@@ -33,19 +33,19 @@
         v-model:type="theme.series.bar.backgroundStyle.borderType" />
     </ACollapsePanel>
 
-    <ACollapsePanel header="标签" key="label">
+    <ACollapsePanel key="label" header="标签">
       <FastLabel :config="theme.series.bar.label" />
     </ACollapsePanel>
   </ACollapse>
 </template>
 
 <script setup lang="ts">
-import useGlobal from '@/store/useGlobal';
-import { ref } from 'vue';
+import useGlobal from '@/store/useGlobal'
+import { ref } from 'vue'
 import ColorPicker from '../../ColorPicker/index.vue'
-import FastBorder from '../components/FastBorder.vue';
-import FastLabel from '../components/FastLabel.vue';
-import Radius from '../components/Radius.vue';
+import FastBorder from '../components/FastBorder.vue'
+import FastLabel from '../components/FastLabel.vue'
+import Radius from '../components/Radius.vue'
 
 const activeKeys = ref(['bar', 'bg', 'label'])
 const { theme } = useGlobal()

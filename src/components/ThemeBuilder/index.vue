@@ -6,7 +6,7 @@
       :options="items.map(o => ({ value: o.value as any, label: o.label, disabled: o.disabled, }))" />
 
     <AForm :label-col="{ span: 4 }" label-align="left" class="mt-4 flex-1 h-0 overflow-auto">
-      <component v-if="activeItem && activeItem.component" :is="activeItem.component" />
+      <component :is="activeItem.component" v-if="activeItem && activeItem.component" />
       <AEmpty v-else />
     </AForm>
   </div>

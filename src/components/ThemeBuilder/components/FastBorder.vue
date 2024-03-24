@@ -12,7 +12,7 @@
 
 <script setup lang="ts">
 import ColorPicker from '../../ColorPicker/index.vue'
-import BorderStyleSelect from './BorderStyleSelect.vue';
+import BorderStyleSelect from './BorderStyleSelect.vue'
 
 const width = defineModel<any>('width')
 const color = defineModel<any>('color')
