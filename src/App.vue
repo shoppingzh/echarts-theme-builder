@@ -26,9 +26,9 @@
         <div class="px-2">
           <ADivider type="vertical" />
         </div>
-        <div class="cursor-pointer" @click="toRepository">
+        <a :href="repo" class="cursor-pointer appearance-none text-gray-950" @click="toRepository">
           <SvgIcon name="github" class="text-3xl" />
-        </div>
+        </a>
       </div>
       <div class="flex-1 h-0 p-4 overflow-auto">
         <Charts />
@@ -85,6 +85,7 @@ const popper = reactive({
   upload: false,
 })
 const { replace, download } = useGlobal()
+const repo = 'https://github.com/shoppingzh/echarts-theme-builder'
 
 function design() {
   popper.design = true
@@ -121,7 +122,7 @@ async function handleUploadChange({ file }: UploadChangeParam) {
 }
 
 function toRepository() {
-  window.open('https://github.com/shoppingzh/echarts-theme-builder')
+  window.open(repo)
 }
 
 hotkeys('ctrl+b', (e) => {
