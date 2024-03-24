@@ -13,6 +13,9 @@ export default [
       '**/*.?([cm])[jt]s?(x)',
       '**/*.vue'
     ],
+    overrides: {
+      '@typescript-eslint/no-explicit-any': [0]
+    }
   }),
   ...vue({
     typescript: true,
