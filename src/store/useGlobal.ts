@@ -26,7 +26,11 @@ export const DEFAULT_THEME: Theme = {
   },
   tooltip: {
     textStyle: {},
-    axisPointer: {},
+    axisPointer: {
+      lineStyle: {},
+      crossStyle: {},
+      shadowStyle: {},
+    },
   },
   axis: {
     category: {
@@ -125,6 +129,8 @@ export default defineStore('global', () => {
     const blob = new Blob([JSON.stringify(themeRef.value, null, 4)], { type: 'application/json' })
     downloadBlob(blob, `主题 ${dayjs().format('YYYY-MM-DD HH_mm_ss')}.json`)
   }
+
+  replace(themeRef.value)
 
   return {
     theme,

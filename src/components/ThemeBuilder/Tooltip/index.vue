@@ -22,8 +22,7 @@
       </AFormItem>
     </ACollapsePanel>
     <ACollapsePanel key="pointer" header="坐标轴指示器">
-      <FastAxisPointer
-        v-model:type="theme.tooltip.axisPointer.type" />
+      <FastAxisPointer :config="theme.tooltip.axisPointer" />
     </ACollapsePanel>
     <ACollapsePanel key="bg" header="背景/边框">
       <AFormItem label="背景色">
