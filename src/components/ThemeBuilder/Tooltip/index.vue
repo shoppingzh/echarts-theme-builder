@@ -21,6 +21,10 @@
         <ASwitch v-model:checked="theme.tooltip.enterable" />
       </AFormItem>
     </ACollapsePanel>
+    <ACollapsePanel key="pointer" header="坐标轴指示器">
+      <FastAxisPointer
+        v-model:type="theme.tooltip.axisPointer.type" />
+    </ACollapsePanel>
     <ACollapsePanel key="bg" header="背景/边框">
       <AFormItem label="背景色">
         <ColorPicker v-model="theme.tooltip.backgroundColor" />
@@ -50,10 +54,11 @@ import useGlobal from '@/store/useGlobal'
 import { ref } from 'vue'
 import ColorPicker from '../../ColorPicker/index.vue'
 import FastBorder from '../components/FastBorder.vue'
+import FastAxisPointer from '../components/FastAxisPointer.vue'
 // import Radius from '../components/Radius.vue';
 import FastTextStyle from '../components/FastTextStyle.vue'
 import Space from '../components/Space.vue'
 
-const activeKeys = ref(['base', 'bg', 'text'])
+const activeKeys = ref(['base', 'pointer', 'bg', 'text'])
 const { theme } = useGlobal()
 </script>

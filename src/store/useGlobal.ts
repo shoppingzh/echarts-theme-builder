@@ -26,6 +26,7 @@ export const DEFAULT_THEME: Theme = {
   },
   tooltip: {
     textStyle: {},
+    axisPointer: {},
   },
   axis: {
     category: {
