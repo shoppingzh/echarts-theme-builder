@@ -9,6 +9,8 @@ import { Theme, withTheme } from '@shoppingzh/tools/lib/echarts'
 import { EChartsOption } from 'echarts'
 import useGlogal from '@/store/useGlobal'
 import { cloneDeep } from 'lodash'
+import usePref from '@/store/usePref'
+import { storeToRefs } from 'pinia'
 
 const props = defineProps<{
   option: EChartsOption
@@ -22,11 +24,14 @@ const themeOption = computed(() => {
 
   return option
 })
+const { darkMode } = storeToRefs(usePref())
+const chartTheme = computed(() => darkMode.value ? 'dark' : undefined)
 
 const { el } = useChart({
   option: themeOption,
   lazyRender: true,
   resizeDuration: 200,
+  theme: chartTheme,
 })
 
 </script>

@@ -1,10 +1,10 @@
 
 <template>
-  <AConfigProvider :locale="zhCN">
+  <AConfigProvider :locale="zhCN" :theme="{ algorithm }">
     <div class="h-full flex flex-col">
-      <div class="flex items-center h-[50px] px-4 bg-white shadow-sm">
+      <div class="flex items-center h-[50px] px-4 bg-white dark:bg-black shadow-sm">
         <div class="relative flex-1 w-0 text-lg font-semibold">
-          <div class="absolute select-none -left-2 bottom-0 w-5 h-5 bg-pink-500/40 rounded-full pointer-events-none" />
+          <div class="absolute select-none -left-2 bottom-0 w-5 h-5 bg-pink-500/40 dark:bg-pink-600/60 rounded-full pointer-events-none" />
           Echarts主题设计器
         </div>
         <AButton type="primary" @click="design()">
@@ -26,11 +26,21 @@
         <div class="px-2">
           <ADivider type="vertical" />
         </div>
-        <a :href="repo" class="cursor-pointer appearance-none text-gray-950" @click="toRepository">
+        <div>
+          <ASwitch v-model:checked="darkMode">
+            <template #checkedChildren>
+              <SvgIcon name="heiye" class="text-xl" />
+            </template>
+            <template #unCheckedChildren>
+              <SvgIcon name="baitian" class="text-xl" />
+            </template>
+          </ASwitch>
+        </div>
+        <a :href="repo" class="ml-2 cursor-pointer appearance-none text-gray-950 dark:text-gray-50" @click="toRepository">
           <SvgIcon name="github" class="text-3xl" />
         </a>
       </div>
-      <div class="flex-1 h-0 p-4 overflow-auto">
+      <div class="flex-1 h-0 p-4 overflow-auto dark:bg-gray-900">
         <Charts />
       </div>
     </div>
@@ -76,16 +86,21 @@ import ThemeBuilder from '@/components/ThemeBuilder/index.vue'
 import { reactive } from 'vue'
 import hotkeys from 'hotkeys-js'
 import useGlobal from '@/store/useGlobal'
+import usePref from '@/store/usePref'
 import zhCN from 'ant-design-vue/es/locale/zh_CN'
 import { UploadChangeParam } from 'ant-design-vue/es/upload/interface'
-import { Modal } from 'ant-design-vue'
+import { Modal, theme } from 'ant-design-vue'
+import { computed } from 'vue'
+import { storeToRefs } from 'pinia'
 
 const popper = reactive({
   design: false,
   upload: false,
 })
+const { darkMode } = storeToRefs(usePref())
 const { replace, download } = useGlobal()
 const repo = 'https://github.com/shoppingzh/echarts-theme-builder'
+const algorithm = computed(() => darkMode.value ? theme.darkAlgorithm : theme.defaultAlgorithm)
 
 function design() {
   popper.design = true

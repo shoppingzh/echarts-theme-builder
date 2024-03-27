@@ -34,7 +34,7 @@ function remove(index: number) {
 
 <style lang="postcss" scoped>
 .button {
-  @apply text-center leading-5 bg-gray-200 cursor-pointer transition-all duration-300;
+  @apply text-center leading-5 bg-gray-200 dark:bg-gray-800 cursor-pointer transition-all duration-300;
   @apply hover:bg-gray-600 hover:text-white;
 }
 </style>

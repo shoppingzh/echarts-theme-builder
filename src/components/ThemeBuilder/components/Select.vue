@@ -3,7 +3,7 @@
     v-for="(item, index) in props.items"
     :key="index"
     :class="{ 'mt-3': index > 0, '!border-blue-700 font-semibold': model === item.value }"
-    class="flex flex-col w-[120px] h-[60px] p-1 border border-solid border-gray-300 cursor-pointer"
+    class="flex flex-col w-[120px] h-[60px] p-1 border border-solid border-gray-300 dark:border-gray-600 cursor-pointer"
     @click="model = item.value">
     <div class="flex-1 h-0">
       <SvgIcon :name="item.icon" class="chart" :class="{ '!text-blue-700': model === item.value }" />

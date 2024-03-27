@@ -7,3 +7,7 @@ html, body, #app {
 * {
   @apply box-border;
 }
+
+body {
+  @apply dark:text-gray-200;
+}

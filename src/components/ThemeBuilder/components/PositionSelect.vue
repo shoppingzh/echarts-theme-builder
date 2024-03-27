@@ -45,7 +45,7 @@ function select(position: Position) {
 <style scoped lang="postcss">
 .position-select {
   &__item {
-    @apply bg-slate-200 cursor-pointer transition-all duration-150;
+    @apply bg-slate-200 dark:bg-slate-500 cursor-pointer transition-all duration-150;
     &:hover, &.is-active {
       @apply bg-blue-500;
     }
