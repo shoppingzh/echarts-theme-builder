@@ -36,7 +36,7 @@
             </template>
           </ASwitch>
         </div>
-        <a :href="repo" class="ml-2 cursor-pointer appearance-none text-gray-950 dark:text-gray-50" @click="toRepository">
+        <a :href="repo" target="_blank" class="ml-2 cursor-pointer appearance-none text-gray-950 dark:text-gray-50">
           <SvgIcon name="github" class="text-3xl" />
         </a>
       </div>
